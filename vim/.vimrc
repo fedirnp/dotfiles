@@ -83,6 +83,7 @@ set t_Co=256
 let g:airline_powerline_fonts = 1
 let g:gruvbox_contrast_dark = "hard"
 " let g:molokai_original = 1
+let g:ctrlp_working_path_mode = 'ra'
 
 set bg=dark
 colorscheme gruvbox
