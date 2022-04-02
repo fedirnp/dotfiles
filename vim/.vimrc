@@ -7,7 +7,7 @@ set nocompatible
 set number
 set laststatus=2
 set statusline=%f
-set autochdir
+" set autochdir
 
 scriptencoding utf-8
 set encoding=utf-8
