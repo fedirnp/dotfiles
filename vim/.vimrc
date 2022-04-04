@@ -27,8 +27,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Shortcut to yanking to the system clipboard
-map ;y "+y
-map ;p "+p
+map <Leader>y "+y
+map <Leader>p "+p
 
 " Clear whitespace at the end of lines automatically
 autocmd BufWritePre * :%s/\s\+$//e
