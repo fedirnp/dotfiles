@@ -27,8 +27,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Shortcut to yanking to the system clipboard
-map <Leader>y "+y
-map <Leader>p "+p
+map ;y "+y
+map ;P "+p
+
+
+" cd to the directory containing the file in the buffer.
+nmap <leader>cd :cd %:h<CR>
+nmap <leader>lcd :lcd %:h<CR>
 
 " Clear whitespace at the end of lines automatically
 autocmd BufWritePre * :%s/\s\+$//e
