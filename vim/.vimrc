@@ -30,6 +30,8 @@ nnoremap <C-l> <C-w>l
 map ;y "+y
 map ;P "+p
 
+" Get rid of search highlights
+noremap <silent><leader>/ :nohlsearch<cr>
 
 " cd to the directory containing the file in the buffer.
 nmap <leader>cd :cd %:h<CR>
