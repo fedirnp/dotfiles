@@ -7,6 +7,11 @@ set nocompatible
 set number
 set laststatus=2
 set statusline=%f
+set updatetime=500
+
+" Allows to use mouse to resize splits
+set mouse=a
+
 " set autochdir
 
 scriptencoding utf-8
@@ -27,8 +32,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Shortcut to yanking to the system clipboard
-map ;y "+y
-map ;P "+p
+" map ;y "+y
+" map ;P "+p
 
 " Get rid of search highlights
 noremap <silent><leader>/ :nohlsearch<cr>
@@ -70,8 +75,55 @@ call plug#begin('~/.vim/plugged')
    Plug 'vim-airline/vim-airline-themes'
    Plug 'LnL7/vim-nix'
 
+   Plug 'dense-analysis/ale'
+
+   if executable('node')
+       Plug 'neoclide/coc.nvim', {'branch': 'release'}
+       let coc_loaded = 1
+    endif
+
 " Initialize plugin system
 call plug#end()
+
+if exists('coc_loaded')
+    " Always show the signcolumn, otherwise it would shift the text each time
+      set signcolumn=yes
+
+    " Use tab for trigger completion with characters ahead and navigate.
+    " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+    " other plugin before putting this into your config.
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    " Use <c-space> to trigger completion.
+    if has('nvim')
+      inoremap <silent><expr> <c-space> coc#refresh()
+    else
+      inoremap <silent><expr> <c-@> coc#refresh()
+    endif
+
+    " Make <CR> auto-select the first completion item and notify coc.nvim to
+    " format on enter, <cr> could be remapped by other vim plugin
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+endif
+
+" Disable re-formatting paste when in insert mode (using C-r)
+set paste
+
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+     \ 'javascript': ['eslint'],
+     \ 'vue': ['eslint']
+     \ }
 
 map <F2> :w<CR>
 inoremap <F2> <c-o>:w<cr>
@@ -95,6 +147,7 @@ let g:ctrlp_working_path_mode = 'ra'
 set bg=dark
 colorscheme gruvbox
 " colorscheme codedark
+" coc autocomplete
 
 set langmap=ж;;
 set langmap=\'`,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ї],фa,іs,вd,аf,пg,рh,оj,лk,дl,є',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,\'~,ЙQ,ЦW,УE,КR,ЕT,HY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Є\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<
