@@ -125,6 +125,12 @@ let g:ale_fixers = {
      \ 'vue': ['eslint']
      \ }
 
+" Use 'fd' instead of find for fzf to respect .gitignore if it exists
+" so :Files respect .gitignore
+if executable('fd')
+	let $FZF_DEFAULT_COMMAND='fd --type f'
+endif
+
 map <F2> :w<CR>
 inoremap <F2> <c-o>:w<cr>
 
