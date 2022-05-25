@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --hide-menubar --wait 
+bindsym $mod+Return exec gnome-terminal --hide-menubar --wait
 #bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -183,21 +183,23 @@ bar {
 
 #Default values
 # class                 border  backgr. text    indicator child_border
-#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 #client.urgent           #2f343a #900000 #ffffff #900000   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #client.background       #ffffff
 #
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #000000 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #777777 #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+# client.focused          #4c7899 #000000 #ffffff #2e9ef4   #285577
+# client.focused_inactive #333333 #777777 #ffffff #484e50   #5f676a
+# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+
+focus_follows_mouse no
 
 # this is not necessary if specified in .Xresources and included in .xinitrc
-#exec xrandr --dpi 150
-exec --no-startup-id redshift -P -O 4000
-exec --no-startup-id xsetroot -solid "#333333"
+# exec xrandr --dpi 150
+# exec --no-startup-id redshift -P -O 4000
+# exec --no-startup-id xsetroot -solid "#333333"
 
-exec --no-startup-id setxkbmap -layout us,ua -option 'grp:win_space_toggle'
+# exec --no-startup-id setxkbmap -layout us,ua -option 'grp:win_space_toggle'
