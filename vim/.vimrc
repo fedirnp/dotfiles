@@ -118,7 +118,7 @@ if exists('coc_loaded')
 endif
 
 " Disable re-formatting paste when in insert mode (using C-r)
-set paste
+" set paste
 
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
@@ -131,6 +131,7 @@ let g:ale_fixers = {
 if executable('fd')
 	let $FZF_DEFAULT_COMMAND='fd --type f'
 endif
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules/*
 
 map <F2> :w<CR>
 inoremap <F2> <c-o>:w<cr>
