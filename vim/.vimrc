@@ -9,6 +9,9 @@ set laststatus=2
 set statusline=%f
 set updatetime=500
 
+" display relative line numbers
+set rnu
+
 " Allows to use mouse to resize splits
 set mouse=a
 
