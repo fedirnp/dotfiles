@@ -79,7 +79,11 @@ call plug#begin('~/.vim/plugged')
    Plug 'vim-airline/vim-airline-themes'
    Plug 'LnL7/vim-nix'
 
+   Plug 'neovim/nvim-lspconfig'
+
    Plug 'dense-analysis/ale'
+
+   Plug 'preservim/nerdtree'
 
    if executable('node')
        Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -159,6 +163,11 @@ set bg=dark
 colorscheme gruvbox
 " colorscheme codedark
 " coc autocomplete
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 set langmap=ж;;
 set langmap=\'`,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ї],фa,іs,вd,аf,пg,рh,оj,лk,дl,є',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,\'~,ЙQ,ЦW,УE,КR,ЕT,HY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Є\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<
