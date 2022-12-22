@@ -25,9 +25,6 @@ set encoding=utf-8
 set ttimeoutlen=100
 
 " --------------------------------------
-" The following is copied from Mitchel H. vim configuration:
-" https://github.com/mitchellh/dotfiles/blob/main/nvim/init.vim
-"
 " Make navigating around splits easier
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -64,7 +61,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-   Plug 'morhetz/gruvbox'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'joshdick/onedark.vim'
+   " Plug 'morhetz/gruvbox'
 
    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
    Plug 'ctrlpvim/ctrlp.vim'
@@ -155,12 +154,22 @@ autocmd FileType go nmap <leader>b  <Plug>(go-build)
 " Configuration for airline
 set t_Co=256
 let g:airline_powerline_fonts = 1
-let g:gruvbox_contrast_dark = "hard"
 " let g:molokai_original = 1
 let g:ctrlp_working_path_mode = 'ra'
 
-set bg=dark
-colorscheme gruvbox
+" --- GruvBox theme ---
+" Uncomment both lines for gruvbox themes
+" let g:gruvbox_contrast_dark = "hard"
+" set bg=dark
+" colorscheme gruvbox
+
+" --- OneDark theme ---
+set termguicolors
+colorscheme onedark
+hi Comment cterm=italic gui=italic
+
+"
+"
 " colorscheme codedark
 " coc autocomplete
 
