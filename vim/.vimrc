@@ -42,6 +42,10 @@ noremap <silent><leader>/ :nohlsearch<cr>
 nmap <leader>cd :cd %:h<CR>
 nmap <leader>lcd :lcd %:h<CR>
 
+nmap <M-{> :tabp<CR>
+nmap <M-}> :tabn<CR>
+
+
 " Clear whitespace at the end of lines automatically
 autocmd BufWritePre * :%s/\s\+$//e
 
