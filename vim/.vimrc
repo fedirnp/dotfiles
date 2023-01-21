@@ -155,6 +155,9 @@ autocmd FileType go nmap <leader>r  <Plug>(go-rename)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 
+" autocmd FileType go
+" map <C-/> :s/^\s*\/\//<CR>
+
 " Configuration for airline
 set t_Co=256
 let g:airline_powerline_fonts = 1
@@ -183,6 +186,9 @@ nnoremap ´ :NERDTreeToggle<CR>
 nnoremap <M-E> :NERDTreeToggle<CR>
 " nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Exit from Terminal mode using "ESC" key
+:tnoremap <Esc> <C-\><C-n>
 
 set langmap=ж;;
 set langmap=\'`,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ї],фa,іs,вd,аf,пg,рh,оj,лk,дl,є',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,\'~,ЙQ,ЦW,УE,КR,ЕT,HY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Є\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<
