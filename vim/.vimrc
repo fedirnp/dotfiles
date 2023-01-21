@@ -88,10 +88,10 @@ call plug#begin('~/.vim/plugged')
 
    Plug 'preservim/nerdtree'
 
-   if executable('node')
-       Plug 'neoclide/coc.nvim', {'branch': 'release'}
-       let coc_loaded = 1
-    endif
+"   if executable('node')
+"       Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"       let coc_loaded = 1
+"    endif
 
 " Initialize plugin system
 call plug#end()
@@ -179,6 +179,7 @@ hi Comment cterm=italic gui=italic
 
 nnoremap <M-e> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
+nnoremap ´ :NERDTreeToggle<CR>
 nnoremap <M-E> :NERDTreeToggle<CR>
 " nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
