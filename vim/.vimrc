@@ -163,6 +163,12 @@ set t_Co=256
 let g:airline_powerline_fonts = 1
 " let g:molokai_original = 1
 let g:ctrlp_working_path_mode = 'ra'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = " "
+let g:airline_symbols.colnr = ""
+let g:airline#extensions#whitespace#enabled = 0
 
 " --- GruvBox theme ---
 " Uncomment both lines for gruvbox themes
