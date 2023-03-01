@@ -142,6 +142,9 @@ if executable('fd')
 	let $FZF_DEFAULT_COMMAND='fd --type f'
 endif
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules/*
+"
+" Make ":Ag" not search within file name
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 map <F2> :w<CR>
 inoremap <F2> <c-o>:w<cr>
