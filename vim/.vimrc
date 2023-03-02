@@ -13,7 +13,7 @@ set updatetime=500
 set rnu
 
 " Allows to use mouse to resize splits
-set mouse=a
+" set mouse=a
 
 " set autochdir
 
