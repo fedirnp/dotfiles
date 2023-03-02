@@ -177,10 +177,13 @@ let g:airline#extensions#whitespace#enabled = 0
 
 nnoremap <M-e> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
-nnoremap ´ :NERDTreeToggle<CR>
 nnoremap <M-E> :NERDTreeToggle<CR>
-" nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+"
+" This for macOS (Alt+Shift+E)
+nnoremap ´ :NERDTreeToggle<CR>
+" This for macOS (Alt+Shift+F)
+nnoremap Ï :NERDTreeFind<CR>
 
 " Terminal configuration
 " Exit from Terminal mode using "ESC" key
