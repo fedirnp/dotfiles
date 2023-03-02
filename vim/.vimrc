@@ -12,9 +12,7 @@ set updatetime=500
 " display relative line numbers
 set rnu
 
-" Allows to use mouse to resize splits
-" set mouse=a
-
+set mouse=
 " set autochdir
 
 scriptencoding utf-8
@@ -188,7 +186,9 @@ nnoremap Ï :NERDTreeFind<CR>
 " Terminal configuration
 " Exit from Terminal mode using "ESC" key
 :tnoremap <Esc> <C-\><C-n>
+if has('nvim')
 autocmd TermOpen * setlocal nonumber norelativenumber
+endif
 autocmd BufWinEnter,WinEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 
@@ -208,5 +208,6 @@ colorscheme gruvbox
 " colorscheme onedark
 
 " Othe tweaks
+if has('nvim')
 hi Comment cterm=italic gui=italic
-
+endif
