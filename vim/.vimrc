@@ -174,13 +174,17 @@ let g:airline#extensions#whitespace#enabled = 0
 " coc autocomplete
 
 nnoremap <M-e> :NERDTreeFocus<CR>
+
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <M-E> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 "
-" This for macOS (Alt+Shift+E)
+" Some hacks for macOS terminal
+" (Alt+Shift+R)
+nnoremap ‰ :NERDTreeFocus<CR>
+" (Alt+Shift+E)
 nnoremap ´ :NERDTreeToggle<CR>
-" This for macOS (Alt+Shift+F)
+" (Alt+Shift+F)
 nnoremap Ï :NERDTreeFind<CR>
 
 " Terminal configuration
