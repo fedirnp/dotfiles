@@ -30,8 +30,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Shortcut to yanking to the system clipboard
-" map ;y "+y
+"e map ;y "+y
 " map ;P "+p
+set clipboard=unnamedplus
 
 " Get rid of search highlights
 noremap <silent><leader>/ :nohlsearch<cr>
@@ -63,6 +64,10 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+"     if executable('node')
+"         Plug 'github/copilot.vim'
+"      endif
+
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'joshdick/onedark.vim'
     Plug 'morhetz/gruvbox'
@@ -86,10 +91,11 @@ call plug#begin('~/.vim/plugged')
 
    Plug 'preservim/nerdtree'
 
-"   if executable('node')
-"       Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"       let coc_loaded = 1
-"    endif
+
+"    if executable('node')
+"        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"        let coc_loaded = 1
+"     endif
 
 " Initialize plugin system
 call plug#end()
