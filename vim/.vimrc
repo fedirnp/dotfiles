@@ -44,6 +44,7 @@ nmap <leader>lcd :lcd %:h<CR>
 nmap <M-{> :tabp<CR>
 nmap <M-}> :tabn<CR>
 
+au FileType go setl fileformat=unix
 
 " Clear whitespace at the end of lines automatically
 autocmd BufWritePre * :%s/\s\+$//e
