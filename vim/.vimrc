@@ -88,6 +88,7 @@ call plug#begin('~/.vim/plugged')
    Plug 'vim-airline/vim-airline-themes'
    Plug 'LnL7/vim-nix'
 
+   Plug 'neovimhaskell/haskell-vim'
    Plug 'neovim/nvim-lspconfig'
 
    Plug 'dense-analysis/ale'
