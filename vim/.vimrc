@@ -36,6 +36,9 @@ nnoremap <C-w>N :belowright :vnew<cr>
 " map ;P "+p
 set clipboard=unnamedplus
 
+" Makeing paste in visual mode to preserve the current clipboard
+vnoremap <silent> p "_dP
+
 " Get rid of search highlights
 noremap <silent><leader>/ :nohlsearch<cr>
 
@@ -94,6 +97,7 @@ call plug#begin('~/.vim/plugged')
    Plug 'dense-analysis/ale'
 
    Plug 'preservim/nerdtree'
+   Plug 'lepture/vim-jinja'
 
 
 "    if executable('node')
